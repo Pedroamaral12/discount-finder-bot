@@ -1,0 +1,43 @@
+{
+  "name": "discount-finder-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pedroamaral12/discount-finder-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Pedroamaral12/discount-finder-bot/issues"
+  },
+  "homepage": "https://github.com/Pedroamaral12/discount-finder-bot#readme",
+  "dependencies": {
+    "drizzle-orm": "^0.45.2",
+    "fastify": "^5.8.4",
+    "pg": "^8.20.0",
+    "redis": "^5.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "@types/pg": "^8.20.0",
+    "drizzle-kit": "^0.31.10",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
+    "docker:build": "docker build -t discount-finder-bot .",
+    "docker:run": "docker-compose up",
+    "docker:down": "docker-compose down"
+  
+}
+}
