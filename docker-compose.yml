@@ -5,7 +5,7 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-      - DATABASE_URL=postgresql://postgres:password@postgres:5432/discount_finder
+      - DATABASE_URL=postgresql://adm123:@adm123@postgres:5432/discount_finder
       - REDIS_URL=redis://redis:6379
     depends_on:
       - postgres
@@ -17,8 +17,8 @@ services:
     image: postgres:16-alpine
     environment:
       - POSTGRES_DB=discount_finder
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=adm123
+      - POSTGRES_PASSWORD=@adm123
     ports:
       - "5432:5432"
     volumes:

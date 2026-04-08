@@ -16,17 +16,22 @@
   },
   "homepage": "https://github.com/Pedroamaral12/discount-finder-bot#readme",
   "dependencies": {
+    "cron": "^3.1.7",
+    "dotenv": "^16.4.5",
     "drizzle-orm": "^0.45.2",
     "fastify": "^5.8.4",
+    "grammy": "^1.21.1",
     "pg": "^8.20.0",
     "redis": "^5.11.0"
   },
   "devDependencies": {
+    "@types/cron": "^2.0.1",
     "@types/node": "^25.5.2",
     "@types/pg": "^8.20.0",
     "drizzle-kit": "^0.31.10",
     "tsx": "^4.21.0",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.2",
+    "pino-pretty": "^10.2.3"
   },
   "scripts": {
     "dev": "tsx watch src/server.ts",
