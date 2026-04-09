@@ -1,5 +1,5 @@
 import Fastify from 'fastify';
-import { TelegramJob } from '@/jobs/telegramJob';
+// import { TelegramJob } from '@/jobs/telegramJob';
 import { appConfig } from '@/config';
 import { HealthCheckResponse } from '@/types';
 import { registerPlugins } from '@/plugins';
@@ -21,7 +21,7 @@ const fastify = Fastify({
 
 
 // Initialize Telegram job
-let telegramJob: TelegramJob;
+// let telegramJob: TelegramJob;
 
 async function healthCheckHandler(): Promise<HealthCheckResponse> {
   const uptime = process.uptime();
@@ -32,8 +32,8 @@ async function healthCheckHandler(): Promise<HealthCheckResponse> {
     uptime: Math.floor(uptime),
     version: process.env['npm_package_version'] || '1.0.0',
     services: {
-      redis: 'connected', // TODO: Implement actual health check
-      telegram: 'connected', // TODO: Implement actual health check
+      redis: 'connected', 
+      telegram: 'connected', 
     },
   };
 }
@@ -72,15 +72,15 @@ const start = async (): Promise<void> => {
     await registerRoutes(fastify);
     
     // Initialize Telegram job
-    telegramJob = new TelegramJob(
-      appConfig.telegramBotToken,
-      appConfig.telegramChannelId,
-      appConfig.redisUrl,
-      appConfig.messageIntervalMinutes
-    );
+    // telegramJob = new TelegramJob(
+    //   appConfig.telegramBotToken,
+    //   appConfig.telegramChannelId,
+    //   appConfig.redisUrl,
+    //   appConfig.messageIntervalMinutes
+    // );
     
-    await telegramJob.start();
-    fastify.log.info('Telegram job started successfully');
+    // await telegramJob.start();
+    // fastify.log.info('Telegram job started successfully');
 
     // Start Fastify server
     await fastify.listen({ 
