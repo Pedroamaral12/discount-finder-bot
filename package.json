@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/Pedroamaral12/discount-finder-bot#readme",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "cron": "^3.1.7",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.45.2",
@@ -29,9 +30,9 @@
     "@types/node": "^25.5.2",
     "@types/pg": "^8.20.0",
     "drizzle-kit": "^0.31.10",
+    "pino-pretty": "^10.2.3",
     "tsx": "^4.21.0",
-    "typescript": "^6.0.2",
-    "pino-pretty": "^10.2.3"
+    "typescript": "^6.0.2"
   },
   "scripts": {
     "dev": "tsx watch src/server.ts",
@@ -43,6 +44,5 @@
     "docker:build": "docker build -t discount-finder-bot .",
     "docker:run": "docker-compose up",
     "docker:down": "docker-compose down"
-  
-}
+  }
 }

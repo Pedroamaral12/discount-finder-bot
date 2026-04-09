@@ -28,6 +28,7 @@ export const appConfig: AppConfig = {
   redisUrl: getEnvVar('REDIS_URL') || 'redis://localhost:6379',
   messageIntervalMinutes: getEnvNumber('MESSAGE_INTERVAL_MINUTES', 1),
   nodeEnv: (getEnvVar('NODE_ENV') as 'development' | 'production' | 'test') || 'development',
+  geminiApiKey: getEnvVar('GEMINI_API_KEY'),
 };
 
 export const isDevelopment = appConfig.nodeEnv === 'development';

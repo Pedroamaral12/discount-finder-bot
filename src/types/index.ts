@@ -6,6 +6,7 @@ export interface AppConfig {
   redisUrl: string;
   messageIntervalMinutes: number;
   nodeEnv: 'development' | 'production' | 'test';
+  geminiApiKey: string | undefined;
 }
 
 export interface QueueMessage {
@@ -48,4 +49,12 @@ export interface LogEntry {
   timestamp: Date;
   service: string;
   metadata?: Record<string, unknown>;
+}
+
+export interface PromotionData {
+  link: string;           // product URL
+  title: string;          // product name
+  previousPrice: number;  // original price in BRL
+  currentPrice: number;   // discounted price in BRL
+  platform: "shopee" | "amazon";
 }
